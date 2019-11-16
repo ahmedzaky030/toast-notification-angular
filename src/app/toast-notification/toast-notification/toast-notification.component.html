@@ -1,0 +1,20 @@
+<div class="toast-notification-container"  [ngClass]="{'top-right': position == 1, 'bottom-left': position == 2 , 'top-left': position == 0, 'bottom-right': position == 3  }">
+  <!-- <div *ngIf="nextNotifications$ | async; let notifs"> -->
+    <div  *ngFor="let notification of visibleNotifications" >
+      <div  class="toast-notification" *ngIf="notification?.show">
+        <div class="notificationStatus" [ngClass]="{'error': notification?.type == 2 , 'success': notification?.type == 0 , 'warning': notification?.type == 1}"></div>
+        <div class="heading" >
+          <span>{{ notification?.headingTitle  }}</span>
+        </div>
+        <div class="subheading" *ngIf="subheadingTitle">
+          <span>{{ notification.subheadingTitle }}</span>
+        </div>
+        <div class="message">
+          <span>{{ notification.message }}</span>
+          <span class="badge">  {{  visibleNotifications.length}}</span>
+        </div>
+      <!-- </div> -->
+    </div>
+  </div>
+  
+</div>

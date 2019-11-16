@@ -1,0 +1,110 @@
+* {
+    margin:0px;
+    padding:0px;
+}
+
+.toast-notification-container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width:300px;
+    
+}
+.toast-notification{
+    width: 300px;
+    height: 90px;
+    z-index: 5;
+    border: 1px solid darkgray;
+    background-color: white;   
+}
+
+/* .toast-notification .heading{
+    background-color: red;
+} */
+
+.toast-notification .heading.success {
+    background-color: rgb(135, 189, 51);
+}
+
+.toast-notification .heading.warning {
+    background-color: orange;
+}
+
+.toast-notification .heading{
+    background-color:white;
+    margin: 0px;
+    padding: 1px 1px 10px 15px;
+    height: 20%;
+    border: 1px solid darkgray;
+}
+
+.toast-notification .subheading{
+    background-color: lightgray;
+    height:15%;
+    padding-left: 3px;
+    border: 1px solid darkgray;
+}
+
+.toast-notification .message{
+    background-color: white;
+    height:55%;
+    padding-top: 5px;
+    border: 1px solid darkgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.toast-notification .message .badge{
+    background-color: burlywood;
+    width: 30px;
+    height: 20px;
+    border-radius: 45%;
+    text-align: center;
+      
+}
+
+.toast-notification .notificationStatus{
+    width: 5px;
+    height: 90px;
+    float: left;
+}
+
+.toast-notification .notificationStatus.error{
+    background-color: red;
+}
+
+.toast-notification .notificationStatus.success{
+    background-color: rgb(135, 189, 51);
+}
+
+.toast-notification .notificationStatus.warning{
+    background-color: orange;
+}
+
+.toast-notification-container.top-left {
+    left: 1px;
+    flex-direction: column;
+    
+    
+}
+
+.toast-notification-container.top-right {
+    right: 1px;
+    flex-direction: column;
+}
+
+.toast-notification-container.bottom-left {
+    left: 1px;
+    flex-direction: column-reverse;
+}
+
+.toast-notification-container.bottom-right {
+    right: 1px;
+    flex-direction: column-reverse;
+}
+
+.toast-notification.hidden{
+    display: none;
+}
