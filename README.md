@@ -2,6 +2,17 @@
 
 This is module for makeing toast notification alerts , and can be used in any shared module .
 
+# How to start
+
+To start  and run the application , please run the following commands:
+
+```
+$ npm install
+$ ng serve
+
+```
+Then navigate to ` http:\\localhost:4200` in your browser.
+
 # Usage 
 
 First , you need to import  ToastNotificationModule in your App Module or any Featured Module you want. 
