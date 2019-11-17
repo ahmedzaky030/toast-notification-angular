@@ -1,27 +1,52 @@
-# DiscovergyTask
+# Toast Notification Module
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
+This is module for makeing toast notification alerts , and can be used in any shared module .
 
-## Development server
+# Usage 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+First , you need to import  ToastNotificationModule in your App Module or any Featured Module you want. 
 
-## Code scaffolding
+Second , you can now use toastNotification component in target component's html by writing:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```sh
+<app-toast-notification [maxNotifications]="4"  [notifications]="notificationsfromParent"  [position]="myPosition" ></app-toast-notification>
+```
 
-## Build
+| Input Prop | type | Description |
+| ------ | ------ |
+| maxNotifications | number | Set the maximum number of notifications can be shown at the same time |
+| notifications | Observable<ToastNotification> | Set the observable stream of type ToastNotification which will be shown |
+| position | TOASTPOSITION enum | Set the position and flow for the toast notifications |
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+As a developer , you can customize your notification alert in different ways :
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# ToastNotification 
 
-## Running end-to-end tests
+| Field | Description | type |
+| ----- | ----------- | ---- |
+| headingTitle | Set the heading of the notification | string
+| subheadingTitle | Set the subheading of notification (Optional) | string
+| messageTitle | Set the message of the notification | string
+| type | Set the type of Notification ( Success , Warning  or Error) | TOASTTYPE enum
+| timeout | Set the time for the message to be displayed (default : 5 secs) | number * 1000
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+# Npm packages used
+1. NgRx : for state management
+2. lodash
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Unit testing
+
+I've made unit tests only for ngrx reducer because it has the most logic there. and you can run it by:
+` ng test`
+
+# Further improvements
+1. Add Animations for the toast notifications. 
+2. Make e2e tests for the notifications. 
+
+
+# Help
+ Feel free to add any recommended improvements to this exciting module 
+
+

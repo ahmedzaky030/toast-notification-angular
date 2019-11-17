@@ -16,7 +16,8 @@
     height: 90px;
     z-index: 5;
     border: 1px solid darkgray;
-    background-color: white;   
+    margin: 2px 0 ;
+      
 }
 
 /* .toast-notification .heading{
@@ -32,25 +33,25 @@
 }
 
 .toast-notification .heading{
-    background-color:white;
+    color: black;
     margin: 0px;
     padding: 1px 1px 10px 15px;
     height: 20%;
-    border: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
 }
 
 .toast-notification .subheading{
-    background-color: lightgray;
-    height:15%;
+    color: black;;
+    
     padding-left: 3px;
-    border: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
 }
 
 .toast-notification .message{
-    background-color: white;
-    height:55%;
+    color: black;
+    height:35%;
     padding-top: 5px;
-    border: 1px solid darkgray;
+    /* border: 1px solid darkgray; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -81,6 +82,18 @@
 
 .toast-notification .notificationStatus.warning{
     background-color: orange;
+}
+
+.toast-notification.error{
+    background-image: linear-gradient(to right , red , white)
+}
+
+.toast-notification.success{
+    background-image: linear-gradient(to right , green , white)
+}
+
+.toast-notification.warning{
+    background-image: linear-gradient(to right , orange , white)
 }
 
 .toast-notification-container.top-left {

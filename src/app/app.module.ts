@@ -13,6 +13,6 @@ import { AppComponent } from './app.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports:[ToastNotificationModule]
+  exports:[]
 })
 export class AppModule { }
