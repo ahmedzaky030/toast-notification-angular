@@ -13,7 +13,7 @@ Second , you can now use toastNotification component in target component's html 
 ```
 
 | Input Prop | type | Description |
-| ------ | ------ |
+| ------ | ------ | ------------  |
 | maxNotifications | number | Set the maximum number of notifications can be shown at the same time |
 | notifications | Observable<ToastNotification> | Set the observable stream of type ToastNotification which will be shown |
 | position | TOASTPOSITION enum | Set the position and flow for the toast notifications |
