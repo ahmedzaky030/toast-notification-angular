@@ -12,6 +12,7 @@ $ ng serve
 
 ```
 Then navigate to ` http:\\localhost:4200` in your browser.
+Or you can view it online directly throught this link [NotificationToast](https://ahmedzak030.000webhostapp.com/)
 
 # Usage 
 
