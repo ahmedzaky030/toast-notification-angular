@@ -1,21 +1,23 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { TOASTPOSITION } from '../model';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { ToastNotification } from '../model/notification';
 import * as notificationsActions from '../actions/toast-notifications.actions';
 import { Store } from '@ngrx/store';
 import * as _ from 'lodash';
+import { takeUntil } from 'rxjs/internal/operators/takeUntil';
 @Component({
   selector: 'app-toast-notification',
   templateUrl: './toast-notification.component.html',
   styleUrls: ['./toast-notification.component.css']
 })
-export class ToastNotificationComponent implements OnInit , OnChanges {
+export class ToastNotificationComponent implements OnInit , OnChanges , OnDestroy {
 
   @Input() position: TOASTPOSITION;
   @Input() maxNotifications = 5;
   @Input() notifications: Observable<ToastNotification> ;
   visibleNotifications: Array<ToastNotification> = [];
+  destroy$: Subject<boolean> = new Subject<boolean>();
 
   constructor(private readonly store: Store<any>) { }
 
@@ -38,7 +40,7 @@ export class ToastNotificationComponent implements OnInit , OnChanges {
   }
 
   ngOnInit() {
-    this.store.select(state => state).subscribe(data => {
+    this.store.select(state => state).pipe(takeUntil(this.destroy$)).subscribe(data => {
       this.visibleNotifications = [...data.toaster.nextNotifications];
       if (this.visibleNotifications && this.visibleNotifications.length) {
         const maxTimeOut = _.maxBy(this.visibleNotifications , 'timeout').timeout;
@@ -50,6 +52,11 @@ export class ToastNotificationComponent implements OnInit , OnChanges {
           }, maxTimeOut);
       }
     });
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
   }
 }
 
