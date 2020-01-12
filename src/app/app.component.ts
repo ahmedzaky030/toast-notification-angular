@@ -9,7 +9,7 @@ import { ToastNotification } from './toast-notification/model/notification';
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-  title = 'discovergy-task';
+  title = 'toast-notification-task';
   taostType = TOASTTYPE.SUCCESS;
   myPosition = TOASTPOSITION.BOTTOM_LEFT;
   fireNotification = false;

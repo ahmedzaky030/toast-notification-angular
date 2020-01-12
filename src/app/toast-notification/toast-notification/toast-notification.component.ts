@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges , OnDestroy } from '@angular/core';
 import { TOASTPOSITION } from '../model';
 import { Observable, Subject } from 'rxjs';
 import { ToastNotification } from '../model/notification';
