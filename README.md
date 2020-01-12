@@ -1,3 +1,6 @@
+# What is it ? 
+It's my solution for test task I've received when I applied for a job . Here it it the task description ['Task Description'](http://prntscr.com/qmm8k1)
+
 # Toast Notification Module
 
 This is module for makeing toast notification alerts , and can be used in any shared module .
