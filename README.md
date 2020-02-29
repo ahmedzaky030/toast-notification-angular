@@ -3,7 +3,7 @@ It's my solution for test task I've received when I applied for a job . Here it 
 
 # Toast Notification Module
 
-This is module for makeing toast notification alerts , and can be used in any shared module .
+This is module for making toast notification alerts , and can be used in any shared module .
 
 # How to start
 
